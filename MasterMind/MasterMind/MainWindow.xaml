@@ -5,13 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MasterMind"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Mastermind" Height="450" Width="800">
     <Grid>
-        <Button Content="Check code" HorizontalAlignment="Center" Margin="0,306,0,0" VerticalAlignment="Top" Click="Button_Click" Width="142"/>
-        <TextBox Name="One" HorizontalAlignment="Left" Margin="60,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="117" Background="White"/>
-        <TextBox Name="Two" HorizontalAlignment="Left" Margin="247,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="117" Background="White"/>
-        <TextBox Name="Three" HorizontalAlignment="Left" Margin="440,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="117" Background="White"/>
-        <TextBox Name="Four" HorizontalAlignment="Left" Margin="622,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="117" Background="White"/>
+        <Button Name="checkcode" Content="Check code" HorizontalAlignment="Center" Margin="0,323,0,0" VerticalAlignment="Top"  Width="142" Click="checkcode_Click"/>
+        <TextBox Name="one" HorizontalAlignment="Left" Margin="60,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="117" Background="White"/>
+        <TextBox Name="two" HorizontalAlignment="Left" Margin="247,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="117" Background="White"/>
+        <TextBox Name="three" HorizontalAlignment="Left" Margin="440,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="117" Background="White"/>
+        <TextBox Name="four" HorizontalAlignment="Left" Margin="622,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="117" Background="White"/>
+        <Button Name="rood1" Content="Rood" HorizontalAlignment="Left" Margin="90,151,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="geel1" Content="Geel" HorizontalAlignment="Left" Margin="90,176,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="oranje1" Content="Oranje" HorizontalAlignment="Left" Margin="90,202,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="wit1" Content="Wit" HorizontalAlignment="Left" Margin="90,227,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="groen1" Content="Groen" HorizontalAlignment="Left" Margin="90,252,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="blauw1" Content="Blauw" HorizontalAlignment="Left" Margin="90,277,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="rood2" Content="Rood" HorizontalAlignment="Left" Margin="277,151,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="geel2" Content="Geel" HorizontalAlignment="Left" Margin="277,176,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="oranje2" Content="Oranje" HorizontalAlignment="Left" Margin="277,202,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="wit2" Content="Wit" HorizontalAlignment="Left" Margin="277,227,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="groen2" Content="Groen" HorizontalAlignment="Left" Margin="277,252,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="blauw2" Content="Blauw" HorizontalAlignment="Left" Margin="277,277,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="rood3" Content="Rood" HorizontalAlignment="Left" Margin="470,151,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="geel3" Content="Geel" HorizontalAlignment="Left" Margin="470,176,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="oranje3" Content="Oranje" HorizontalAlignment="Left" Margin="470,202,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="wit3" Content="Wit" HorizontalAlignment="Left" Margin="470,227,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="groen3" Content="Groen" HorizontalAlignment="Left" Margin="470,252,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="blauw3" Content="Blauw" HorizontalAlignment="Left" Margin="470,277,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="rood4" Content="Rood" HorizontalAlignment="Left" Margin="652,151,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="geel4" Content="Geel" HorizontalAlignment="Left" Margin="652,176,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="oranje4" Content="Oranje" HorizontalAlignment="Left" Margin="652,202,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="wit4" Content="Wit" HorizontalAlignment="Left" Margin="652,227,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="groen4" Content="Groen" HorizontalAlignment="Left" Margin="652,252,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Name="blauw4" Content="Blauw" HorizontalAlignment="Left" Margin="652,277,0,0" VerticalAlignment="Top" Width="60"/>
 
     </Grid>
 </Window>

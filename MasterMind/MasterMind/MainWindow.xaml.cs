@@ -20,5 +20,15 @@ namespace MasterMind
         {
             InitializeComponent();
         }
+
+
+        private void checkcode_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
+
+        
+           
 }
+    

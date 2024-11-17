@@ -42,9 +42,115 @@ namespace MasterMind
         {
 
         }
-    }
 
-        
-           
+        private void color_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            if (btn.Name == "rood1")
+            {
+                one.Background = Brushes.Red;
+            }
+            else if (btn.Name == "geel1")
+            {
+                one.Background = Brushes.Yellow;
+            }
+            else if (btn.Name == "oranje1")
+            {
+                one.Background = Brushes.Orange;
+            }
+            else if (btn.Name == "wit1")
+            {
+                one.Background = Brushes.White;
+            }
+            else if (btn.Name == "groen1")
+            {
+                one.Background = Brushes.Green;
+            }
+            else if (btn.Name == "blauw1")
+            {
+                one.Background = Brushes.Blue;
+            }
+
+
+            if (btn.Name == "rood2")
+            {
+                two.Background = Brushes.Red;
+            }
+            else if (btn.Name == "geel2")
+            {
+                two.Background = Brushes.Yellow;
+            }
+            else if (btn.Name == "oranje2")
+            {
+                two.Background = Brushes.Orange;
+            }
+            else if (btn.Name == "wit2")
+            {
+                two.Background = Brushes.White;
+            }
+            else if (btn.Name == "groen2")
+            {
+                two.Background = Brushes.Green;
+            }
+            else if (btn.Name == "blauw2")
+            {
+                two.Background = Brushes.Blue;
+            }
+
+            if (btn.Name == "rood3")
+            {
+                three.Background = Brushes.Red;
+            }
+            else if (btn.Name == "geel3")
+            {
+                three.Background = Brushes.Yellow;
+            }
+            else if (btn.Name == "oranje3")
+            {
+                three.Background = Brushes.Orange;
+            }
+            else if (btn.Name == "wit3")
+            {
+                three.Background = Brushes.White;
+            }
+            else if (btn.Name == "groen3")
+            {
+                three.Background = Brushes.Green;
+            }
+            else if (btn.Name == "blauw3")
+            {
+                three.Background = Brushes.Blue;
+            }
+
+
+            if (btn.Name == "rood4")
+            {
+                four.Background = Brushes.Red;
+            }
+            else if (btn.Name == "geel4")
+            {
+                four.Background = Brushes.Yellow;
+            }
+            else if (btn.Name == "oranje4")
+            {
+                four.Background = Brushes.Orange;
+            }
+            else if (btn.Name == "wit4")
+            {
+                four.Background = Brushes.White;
+            }
+            else if (btn.Name == "groen4")
+            {
+                four.Background = Brushes.Green;
+            }
+            else if (btn.Name == "blauw4")
+            {
+                four.Background = Brushes.Blue;
+            }
+
+        }
+    }
 }
+
     

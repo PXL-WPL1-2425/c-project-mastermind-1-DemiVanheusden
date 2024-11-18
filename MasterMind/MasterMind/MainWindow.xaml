@@ -36,6 +36,7 @@
             <Button Name="wit4" Content="Wit" HorizontalAlignment="Left" Margin="652,227,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
             <Button Name="groen4" Content="Groen" HorizontalAlignment="Left" Margin="652,252,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
             <Button Name="blauw4" Content="Blauw" HorizontalAlignment="Left" Margin="652,277,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
+        <TextBox Name="timerCountdown" HorizontalAlignment="Left" Margin="10,406,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

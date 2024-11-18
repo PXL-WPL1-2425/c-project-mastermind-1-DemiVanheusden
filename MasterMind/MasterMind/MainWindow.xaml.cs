@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace MasterMind
 {
@@ -22,12 +23,13 @@ namespace MasterMind
         string[] colorSelectionString = ["Red", "Blue", "Green", "White", "Yellow", "Orange"];
         int[] colorsRandom = new int[4];
 
+
         public MainWindow()
         {
             InitializeComponent();
             pickColors();
         }
-
+        private DispatcherTimer timer = new DispatcherTimer();
         private void pickColors()
         {
             for (int i = 0; i < colorsRandom.Length; i++)
@@ -149,6 +151,12 @@ namespace MasterMind
                 four.Background = Brushes.Blue;
             }
 
+        }
+        private void timerCountdown(object sender, EventArgs e)
+        {
+            timer.Tick += Timer_Tick;
+            TimeSpan interval = new TimeSpan(0, 0, 1);
+            Timer.start();
         }
     }
 }

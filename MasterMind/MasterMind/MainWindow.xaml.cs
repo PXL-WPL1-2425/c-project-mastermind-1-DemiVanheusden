@@ -29,7 +29,7 @@ namespace MasterMind
             InitializeComponent();
             pickColors();
         }
-        private DispatcherTimer timer = new DispatcherTimer();
+        DispatcherTimer timer = new DispatcherTimer();
         private void pickColors()
         {
             for (int i = 0; i < colorsRandom.Length; i++)
@@ -151,14 +151,50 @@ namespace MasterMind
                 four.Background = Brushes.Blue;
             }
 
-        }
-        private void timerCountdown(object sender, EventArgs e)
-        {
-            timer.Tick += Timer_Tick;
-            TimeSpan interval = new TimeSpan(0, 0, 1);
-            Timer.start();
+            // De geheime kleurencombinatie (je kunt dit aanpassen)
+            string[] geheimeCombinatie = { "rood", "geel", "oranje", "wit", "groen", "blauw" };
+
+            // Aantal pogingen
+            int pogingen = 10;
+
+            // Loop die maximaal 10 pogingen toestaat
+            while (pogingen > 0)
+            {
+                // Vraagt de speler om de kleurencombinatie in te voeren
+                Console.WriteLine($"Je hebt nog {pogingen} pogingen over. Voer de geheime kleurencombinatie in (bijv. 'rood blauw groen geel oranje wit'):");
+                string invoer = Console.ReadLine();
+
+                // Split de invoer op spaties en converteer naar een array van kleuren
+                string[] ingevoerdeCombinatie = invoer.Split(' ');
+
+                // Controleer of de ingevoerde combinatie gelijk is aan de geheime combinatie
+                if (ingevoerdeCombinatie.Length == geheimeCombinatie.Length &&
+                    juisteCombinatie(ingevoerdeCombinatie, geheimeCombinatie))
+                {
+                    Console.WriteLine("Gefeliciteerd! Je hebt de kleurencombinatie gekraakt.");
+                    break; // Breekt de loop als de combinatie juist is
+                }
+                else
+                {
+                    Console.WriteLine("De kleurencombinatie is onjuist. Probeer het opnieuw.");
+                }
+
+                // Verlaag het aantal pogingen
+                pogingen--;
+            }
+
+            // Als de speler geen pogingen meer heeft
+            if (pogingen == 0)
+            {
+                Console.WriteLine("Je hebt al je pogingen gebruikt. De combinatie was:");
+                Console.WriteLine(string.Join(" ", geheimeCombinatie));
+            }
         }
     }
 }
+
+       
+
+
 
     

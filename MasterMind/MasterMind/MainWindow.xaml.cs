@@ -329,6 +329,154 @@ static int[] BerekenScore(string[] ingevoerdeCombinatie, string[] geheimeCombina
                 score[i] = 2;
             }
         }
+        bool wilSpelen = true;
+
+        while (wilSpelen)
+        {
+            // Start het spel
+            StartGame();
+
+            // Vraag of de speler opnieuw wil spelen
+            Console.WriteLine("Wil je opnieuw spelen? (ja/nee)");
+            string herstart = Console.ReadLine().ToLower();
+
+            if (herstart == "nee")
+            {
+                wilSpelen = false;  // Stop het spel
+            }
+        }
+
+        Console.WriteLine("Bedankt voor het spelen!");
+    }
+
+    static void StartGame()
+    {
+        // Genereer een nieuwe geheime combinatie
+        string[] geheimeCombinatie = GenereerNieuweCombinatie();
+
+        // Aantal pogingen
+        int pogingen = 10;
+        bool codeGekraakt = false;
+
+        while (pogingen > 0 && !codeGekraakt)
+        {
+            // Vraagt de speler om de kleurencombinatie in te voeren
+            Console.WriteLine($"Je hebt nog {pogingen} pogingen over. Voer de geheime kleurencombinatie in (bijv. 'rood blauw groen geel paars wit'):");
+            string invoer = Console.ReadLine();
+
+            // Check of de speler probeert af te breken (afsluiten van het spel)
+            if (invoer.ToLower() == "stop")
+            {
+                // Vraag of de speler zeker weet dat hij het spel wil stoppen
+                Console.WriteLine("Weet je zeker dat je het spel wilt stoppen? (ja/nee)");
+                string stopBevestigen = Console.ReadLine().ToLower();
+
+                if (stopBevestigen == "ja")
+                {
+                    Console.WriteLine("Het spel wordt nu afgesloten.");
+                    Environment.Exit(0);  // Beëindig de applicatie
+                }
+                else
+                {
+                    Console.WriteLine("Je kunt gewoon verder spelen.");
+                    continue;  // Laat de speler verder spelen
+                }
+            }
+
+            // Split de invoer op spaties en converteer naar een array van kleuren
+            string[] ingevoerdeCombinatie = invoer.Split(' ');
+
+            // Controleer of de invoer correct is
+            if (ingevoerdeCombinatie.Length == geheimeCombinatie.Length)
+            {
+                // Bereken de score
+                int[] score = BerekenScore(ingevoerdeCombinatie, geheimeCombinatie);
+
+                // Toon de score
+                Console.WriteLine("Score: ");
+                for (int i = 0; i < score.Length; i++)
+                {
+                    Console.WriteLine($"Positie {i + 1}: {score[i]} strafpunt(en)");
+                }
+
+                // Controleer of de speler de juiste combinatie heeft geraden
+                if (score[0] == 0 && score[1] == 0 && score[2] == 0 && score[3] == 0 && score[4] == 0 && score[5] == 0)
+                {
+                    Console.WriteLine("Gefeliciteerd! Je hebt de kleurencombinatie gekraakt.");
+                    codeGekraakt = true;
+                }
+            }
+            else
+            {
+                Console.WriteLine("De invoer heeft niet het juiste aantal kleuren. Zorg ervoor dat je 6 kleuren invoert.");
+            }
+
+            // Verlaag het aantal pogingen
+            pogingen--;
+        }
+
+        // Als de speler geen pogingen meer heeft, toon de geheime code
+        if (!codeGekraakt)
+        {
+            Console.WriteLine("Je hebt al je pogingen gebruikt. De combinatie was:");
+            Console.WriteLine(string.Join(" ", geheimeCombinatie));
+        }
+    }
+
+    // Methode om de geheime combinatie te genereren
+    static string[] GenereerNieuweCombinatie()
+    {
+        string[] kleuren = { "rood", "blauw", "groen", "geel", "paars", "wit", "zwart", "bruin", "oranje", "grijs" };
+        Random random = new Random();  // Zorg ervoor dat je deze maar één keer maakt
+        string[] geheimeCombinatie = new string[6];
+
+        for (int i = 0; i < geheimeCombinatie.Length; i++)
+        {
+            geheimeCombinatie[i] = kleuren[random.Next(kleuren.Length)];
+        }
+
+        return geheimeCombinatie;
+    }
+
+    // Methode om de score te berekenen
+    static int[] BerekenScore(string[] ingevoerdeCombinatie, string[] geheimeCombinatie)
+    {
+        int[] score = new int[ingevoerdeCombinatie.Length];
+        bool[] gebruiktePosities = new bool[geheimeCombinatie.Length]; // Track of de posities al zijn gecontroleerd
+
+        // Eerst controleren op exacte overeenkomsten (0 strafpunten)
+        for (int i = 0; i < ingevoerdeCombinatie.Length; i++)
+        {
+            if (ingevoerdeCombinatie[i] == geheimeCombinatie[i])
+            {
+                score[i] = 0;
+                gebruiktePosities[i] = true; // Deze positie is correct, markeer als gebruikt
+            }
+        }
+
+        // Nu kijken of de kleur ergens anders in de code voorkomt (1 strafpunt)
+        for (int i = 0; i < ingevoerdeCombinatie.Length; i++)
+        {
+            if (score[i] != 0) // Als het geen exacte match is
+            {
+                for (int j = 0; j < geheimeCombinatie.Length; j++)
+                {
+                    if (!gebruiktePosities[j] && ingevoerdeCombinatie[i] == geheimeCombinatie[j])
+                    {
+                        score[i] = 1; // 1 strafpunt voor kleur die wel voorkomt maar op een andere plek
+                        gebruiktePosities[j] = true; // Markeer de positie als gebruikt
+                        break;
+                    }
+                }
+
+                // Als de kleur niet in de code zit (2 strafpunten)
+                if (score[i] != 1)
+                {
+                    score[i] = 2;
+                }
+            }
+        }
+
+        return score;
     }
 }
-    

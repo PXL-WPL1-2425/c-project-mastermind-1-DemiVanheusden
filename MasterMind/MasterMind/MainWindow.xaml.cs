@@ -480,5 +480,7 @@ static int[] BerekenScore(string[] ingevoerdeCombinatie, string[] geheimeCombina
         }
 
         return score;
+
+        string[] highscores = { "naam speler, X pogingen, score/100" };
     }
 }

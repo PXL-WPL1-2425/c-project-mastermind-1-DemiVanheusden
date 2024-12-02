@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="Mastermind" Height="450" Width="800">
     <Grid>
+        <Menu Name="MastermindHighscore" />
+        
         <Button Name="checkcode" Content="Check code" HorizontalAlignment="Center" Margin="0,323,0,0" VerticalAlignment="Top"  Width="142" Click="checkcode_Click"/>
         <TextBox Name="one" HorizontalAlignment="Left" Margin="60,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="117" Background="White"/>
         <TextBox Name="two" HorizontalAlignment="Left" Margin="247,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="117" Background="White"/>
@@ -37,6 +39,6 @@
             <Button Name="groen4" Content="Groen" HorizontalAlignment="Left" Margin="652,252,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
             <Button Name="blauw4" Content="Blauw" HorizontalAlignment="Left" Margin="652,277,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
         <TextBox Name="timerCountdown" HorizontalAlignment="Left" Margin="10,406,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-
+     
     </Grid>
 </Window>

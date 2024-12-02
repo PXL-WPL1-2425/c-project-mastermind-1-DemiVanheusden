@@ -304,26 +304,25 @@ static int[] BerekenScore(string[] ingevoerdeCombinatie, string[] geheimeCombina
         if (ingevoerdeCombinatie[i] == geheimeCombinatie[i])
         {
             score[i] = 0;
-            gebruiktePosities[i] = true; // Deze positie is correct, markeer als gebruikt
+            gebruiktePosities[i] = true;
         }
     }
 
-    // Nu kijken of de kleur ergens anders in de code voorkomt (1 strafpunt)
+    // de kleur ergens anders in de code voorkomt (1 strafpunt)
     for (int i = 0; i < ingevoerdeCombinatie.Length; i++)
     {
-        if (score[i] != 0) // Als het geen exacte match is
+        if (score[i] != 0)
         {
             for (int j = 0; j < geheimeCombinatie.Length; j++)
             {
                 if (!gebruiktePosities[j] && ingevoerdeCombinatie[i] == geheimeCombinatie[j])
                 {
                     score[i] = 1; // 1 strafpunt voor kleur die wel voorkomt maar op een andere plek
-                    gebruiktePosities[j] = true; // Markeer de positie als gebruikt
+                    gebruiktePosities[j] = true;
                     break;
                 }
             }
 
-            // Als de kleur niet in de code zit (2 strafpunten)
             if (score[i] != 1)
             {
                 score[i] = 2;
@@ -342,7 +341,7 @@ static int[] BerekenScore(string[] ingevoerdeCombinatie, string[] geheimeCombina
 
             if (herstart == "nee")
             {
-                wilSpelen = false;  // Stop het spel
+                wilSpelen = false;
             }
         }
 
@@ -454,17 +453,16 @@ static int[] BerekenScore(string[] ingevoerdeCombinatie, string[] geheimeCombina
             }
         }
 
-        // Nu kijken of de kleur ergens anders in de code voorkomt (1 strafpunt)
         for (int i = 0; i < ingevoerdeCombinatie.Length; i++)
         {
-            if (score[i] != 0) // Als het geen exacte match is
+            if (score[i] != 0) 
             {
                 for (int j = 0; j < geheimeCombinatie.Length; j++)
                 {
                     if (!gebruiktePosities[j] && ingevoerdeCombinatie[i] == geheimeCombinatie[j])
                     {
-                        score[i] = 1; // 1 strafpunt voor kleur die wel voorkomt maar op een andere plek
-                        gebruiktePosities[j] = true; // Markeer de positie als gebruikt
+                        score[i] = 1;
+                        gebruiktePosities[j] = true; 
                         break;
                     }
                 }

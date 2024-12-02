@@ -234,8 +234,8 @@ static void StartGame()
     while (pogingen > 0 && !codeGekraakt)
     {
         // Vraagt de speler om de kleurencombinatie in te voeren
-        Console.WriteLine($"Je hebt nog {pogingen} pogingen over. Voer de geheime kleurencombinatie in (bijv. 'rood blauw groen geel paars wit'):");
-        string invoer = Console.ReadLine();
+        MessageBox.Show($"Je hebt nog {pogingen} pogingen over. Voer de geheime kleurencombinatie in (bijv. 'rood blauw groen geel paars wit'):");
+        string invoer = MessageBox.Show;
 
         // Split de invoer op spaties en converteer naar een array van kleuren
         string[] ingevoerdeCombinatie = invoer.Split(' ');
@@ -247,22 +247,22 @@ static void StartGame()
             int[] score = BerekenScore(ingevoerdeCombinatie, geheimeCombinatie);
 
             // Toon de score
-            Console.WriteLine("Score: ");
+            MessageBox.Show("Score: ");
             for (int i = 0; i < score.Length; i++)
             {
-                Console.WriteLine($"Positie {i + 1}: {score[i]} strafpunt(en)");
+                MessageBox.Show($"Positie {i + 1}: {score[i]} strafpunt(en)");
             }
 
             // Controleer of de speler de juiste combinatie heeft geraden
             if (score[0] == 0 && score[1] == 0 && score[2] == 0 && score[3] == 0 && score[4] == 0 && score[5] == 0)
             {
-                Console.WriteLine("Gefeliciteerd! Je hebt de kleurencombinatie gekraakt.");
+                MessageBox.Show("Gefeliciteerd! Je hebt de kleurencombinatie gekraakt.");
                 codeGekraakt = true;
             }
         }
         else
         {
-            Console.WriteLine("De invoer heeft niet het juiste aantal kleuren. Zorg ervoor dat je 6 kleuren invoert.");
+            MessageBox.Show("De invoer heeft niet het juiste aantal kleuren. Zorg ervoor dat je 6 kleuren invoert.");
         }
 
         // Verlaag het aantal pogingen
@@ -272,8 +272,8 @@ static void StartGame()
     // Als de speler geen pogingen meer heeft, toon de geheime code
     if (!codeGekraakt)
     {
-        Console.WriteLine("Je hebt al je pogingen gebruikt. De combinatie was:");
-        Console.WriteLine(string.Join(" ", geheimeCombinatie));
+        MessageBox.Show("Je hebt al je pogingen gebruikt. De combinatie was:");
+        MessageBox.Show(string.Join(" ", geheimeCombinatie));
     }
 }
 
@@ -336,7 +336,7 @@ static int[] BerekenScore (string[] ingevoerdeCombinatie, string[] geheimeCombin
             StartGame();
 
             // Vraag of de speler opnieuw wil spelen
-            Console.WriteLine("Wil je opnieuw spelen? (ja/nee)");
+            MessageBox.Show("Wil je opnieuw spelen? (ja/nee)");
             string herstart = Console.ReadLine().ToLower();
 
             if (herstart == "nee")
@@ -345,7 +345,7 @@ static int[] BerekenScore (string[] ingevoerdeCombinatie, string[] geheimeCombin
             }
         }
 
-        Console.WriteLine("Bedankt voor het spelen!");
+        MessageBox.Show("Bedankt voor het spelen!");
     }
 
     static void StartGame()
@@ -354,7 +354,7 @@ static int[] BerekenScore (string[] ingevoerdeCombinatie, string[] geheimeCombin
         string[] geheimeCombinatie = GenereerNieuweCombinatie();
 
         // Naam van speler vragen
-        Console.WriteLine("Naam speler:");
+        MessageBox.Show("Naam speler:");
         string naamspeler = Console.ReadLine();
 
         // Aantal pogingen
@@ -364,24 +364,24 @@ static int[] BerekenScore (string[] ingevoerdeCombinatie, string[] geheimeCombin
         while (pogingen > 0 && !codeGekraakt)
         {
             // Vraagt de speler om de kleurencombinatie in te voeren
-            Console.WriteLine($"Je hebt nog {pogingen} pogingen over. Voer de geheime kleurencombinatie in (bijv. 'rood blauw groen geel paars wit'):");
+            MessageBox.Show($"Je hebt nog {pogingen} pogingen over. Voer de geheime kleurencombinatie in (bijv. 'rood blauw groen geel paars wit'):");
             string invoer = Console.ReadLine();
 
             // Check of de speler probeert af te breken
             if (invoer.ToLower() == "stop")
             {
                 // Vraag of de speler zeker weet dat hij het spel wil stoppen
-                Console.WriteLine("Weet je zeker dat je het spel wilt stoppen? (ja/nee)");
+                MessageBox.Show("Weet je zeker dat je het spel wilt stoppen? (ja/nee)");
                 string stopBevestigen = Console.ReadLine().ToLower();
 
                 if (stopBevestigen == "ja")
                 {
-                    Console.WriteLine("Het spel wordt nu afgesloten.");
+                    MessageBox.Show("Het spel wordt nu afgesloten.");
                     Environment.Exit(0);  // Beëindig de applicatie
                 }
                 else
                 {
-                    Console.WriteLine("Je kunt gewoon verder spelen.");
+                    MessageBox.Show("Je kunt gewoon verder spelen.");
                     continue;  // Laat de speler verder spelen
                 }
             }
@@ -396,10 +396,10 @@ static int[] BerekenScore (string[] ingevoerdeCombinatie, string[] geheimeCombin
                 int[] score = BerekenScore(ingevoerdeCombinatie, geheimeCombinatie);
 
                 // Toon de score
-                Console.WriteLine("Score: ");
+                MessageBox.Show("Score: ");
                 for (int i = 0; i < score.Length; i++)
                 {
-                    Console.WriteLine($"Positie {i + 1}: {score[i]} strafpunt(en)");
+                    MessageBox.Show($"Positie {i + 1}: {score[i]} strafpunt(en)");
                 }
 
                 // Controleer of de speler de juiste combinatie heeft geraden

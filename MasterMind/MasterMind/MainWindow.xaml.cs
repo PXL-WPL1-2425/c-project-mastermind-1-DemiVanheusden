@@ -293,7 +293,7 @@ static string[] GenereerNieuweCombinatie()
 }
 
 // Methode om de score te berekenen
-static int[] BerekenScore(string[] ingevoerdeCombinatie, string[] geheimeCombinatie)
+static int[] BerekenScore (string[] ingevoerdeCombinatie, string[] geheimeCombinatie)
 {
     int[] score = new int[ingevoerdeCombinatie.Length];
     bool[] gebruiktePosities = new bool[geheimeCombinatie.Length];
@@ -358,7 +358,7 @@ static int[] BerekenScore(string[] ingevoerdeCombinatie, string[] geheimeCombina
         string naamspeler = Console.ReadLine();
 
         // Aantal pogingen
-        int pogingen = 10;
+        int pogingen = 20;
         bool codeGekraakt = false;
 
         while (pogingen > 0 && !codeGekraakt)
@@ -414,7 +414,7 @@ static int[] BerekenScore(string[] ingevoerdeCombinatie, string[] geheimeCombina
                 Console.WriteLine("De invoer heeft niet het juiste aantal kleuren. Zorg ervoor dat je 6 kleuren invoert.");
             }
 
-            // Verlaag het aantal pogingen
+            // Verlaag aantal pogingen
             pogingen--;
         }
 
@@ -453,7 +453,7 @@ static int[] BerekenScore(string[] ingevoerdeCombinatie, string[] geheimeCombina
             if (ingevoerdeCombinatie[i] == geheimeCombinatie[i])
             {
                 score[i] = 0;
-                gebruiktePosities[i] = true; // Deze positie is correct, markeer als gebruikt
+                gebruiktePosities[i] = true;
             }
         }
 
@@ -471,7 +471,7 @@ static int[] BerekenScore(string[] ingevoerdeCombinatie, string[] geheimeCombina
                     }
                 }
 
-                // Als de kleur niet in de code zit (2 strafpunten)
+                // Als de kleur niet in de code zit
                 if (score[i] != 1)
                 {
                     score[i] = 2;

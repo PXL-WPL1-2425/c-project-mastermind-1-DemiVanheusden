@@ -353,6 +353,10 @@ static int[] BerekenScore(string[] ingevoerdeCombinatie, string[] geheimeCombina
         // Genereer een nieuwe geheime combinatie
         string[] geheimeCombinatie = GenereerNieuweCombinatie();
 
+        // Naam van speler
+        Console.WriteLine("Naam speler:");
+        string naamspeler = Console.ReadLine();
+
         // Aantal pogingen
         int pogingen = 10;
         bool codeGekraakt = false;
@@ -426,7 +430,7 @@ static int[] BerekenScore(string[] ingevoerdeCombinatie, string[] geheimeCombina
     static string[] GenereerNieuweCombinatie()
     {
         string[] kleuren = { "rood", "blauw", "groen", "geel", "paars", "wit", "zwart", "bruin", "oranje", "grijs" };
-        Random random = new Random();  // Zorg ervoor dat je deze maar één keer maakt
+        Random random = new Random();
         string[] geheimeCombinatie = new string[6];
 
         for (int i = 0; i < geheimeCombinatie.Length; i++)

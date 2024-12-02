@@ -216,10 +216,10 @@ namespace MasterMind
             {
                 wilSpelen = false;  // Stop het spel
             }
-    // Anders wordt wilSpelen weer 'true' en begint het spel opnieuw.
 }
 
 Console.WriteLine("Bedankt voor het spelen!");
+Console.ReadLine();
 
 
 static void StartGame()
@@ -296,9 +296,9 @@ static string[] GenereerNieuweCombinatie()
 static int[] BerekenScore(string[] ingevoerdeCombinatie, string[] geheimeCombinatie)
 {
     int[] score = new int[ingevoerdeCombinatie.Length];
-    bool[] gebruiktePosities = new bool[geheimeCombinatie.Length]; // Track of de posities al zijn gecontroleerd
+    bool[] gebruiktePosities = new bool[geheimeCombinatie.Length];
 
-    // Eerst controleren op exacte overeenkomsten (0 strafpunten)
+    // Eerst controleren op exacte overeenkomsten
     for (int i = 0; i < ingevoerdeCombinatie.Length; i++)
     {
         if (ingevoerdeCombinatie[i] == geheimeCombinatie[i])
@@ -308,7 +308,7 @@ static int[] BerekenScore(string[] ingevoerdeCombinatie, string[] geheimeCombina
         }
     }
 
-    // de kleur ergens anders in de code voorkomt (1 strafpunt)
+    // de kleur ergens anders in de code voorkomt
     for (int i = 0; i < ingevoerdeCombinatie.Length; i++)
     {
         if (score[i] != 0)
@@ -353,7 +353,7 @@ static int[] BerekenScore(string[] ingevoerdeCombinatie, string[] geheimeCombina
         // Genereer een nieuwe geheime combinatie
         string[] geheimeCombinatie = GenereerNieuweCombinatie();
 
-        // Naam van speler
+        // Naam van speler vragen
         Console.WriteLine("Naam speler:");
         string naamspeler = Console.ReadLine();
 
@@ -367,7 +367,7 @@ static int[] BerekenScore(string[] ingevoerdeCombinatie, string[] geheimeCombina
             Console.WriteLine($"Je hebt nog {pogingen} pogingen over. Voer de geheime kleurencombinatie in (bijv. 'rood blauw groen geel paars wit'):");
             string invoer = Console.ReadLine();
 
-            // Check of de speler probeert af te breken (afsluiten van het spel)
+            // Check of de speler probeert af te breken
             if (invoer.ToLower() == "stop")
             {
                 // Vraag of de speler zeker weet dat hij het spel wil stoppen

@@ -209,8 +209,8 @@ namespace MasterMind
         StartGame();
 
         // Vraag of de speler opnieuw wil spelen
-        Console.WriteLine("Wil je opnieuw spelen? (ja/nee)");
-            string herstart = Console.ReadLine().ToLower();
+        MessageBox.Show("Wil je opnieuw spelen? (ja/nee)");
+            
 
             if (herstart == "nee")
             {
@@ -218,8 +218,7 @@ namespace MasterMind
             }
 }
 
-Console.WriteLine("Bedankt voor het spelen!");
-Console.ReadLine();
+MessageBox.Show("Bedankt voor het spelen!");
 
 
 static void StartGame()
@@ -337,12 +336,12 @@ static int[] BerekenScore (string[] ingevoerdeCombinatie, string[] geheimeCombin
 
             // Vraag of de speler opnieuw wil spelen
             MessageBox.Show("Wil je opnieuw spelen? (ja/nee)");
-            string herstart = Console.ReadLine().ToLower();
-
-            if (herstart == "nee")
+            MessageBoxResult result = MessageBox.Show("Wil je opnieuw spelen?", "Herstart", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.No)
             {
-                wilSpelen = false;
+                wilSpelen = false;  // Stop het spel
             }
+
         }
 
         MessageBox.Show("Bedankt voor het spelen!");
@@ -405,13 +404,13 @@ static int[] BerekenScore (string[] ingevoerdeCombinatie, string[] geheimeCombin
                 // Controleer of de speler de juiste combinatie heeft geraden
                 if (score[0] == 0 && score[1] == 0 && score[2] == 0 && score[3] == 0 && score[4] == 0 && score[5] == 0)
                 {
-                    Console.WriteLine("Gefeliciteerd! Je hebt de kleurencombinatie gekraakt.");
+                    MessageBox.Show("Gefeliciteerd! Je hebt de kleurencombinatie gekraakt.");
                     codeGekraakt = true;
                 }
             }
             else
             {
-                Console.WriteLine("De invoer heeft niet het juiste aantal kleuren. Zorg ervoor dat je 6 kleuren invoert.");
+                MessageBox.Show("De invoer heeft niet het juiste aantal kleuren. Zorg ervoor dat je 6 kleuren invoert.");
             }
 
             // Verlaag aantal pogingen
@@ -421,8 +420,8 @@ static int[] BerekenScore (string[] ingevoerdeCombinatie, string[] geheimeCombin
         // Als de speler geen pogingen meer heeft, toon de geheime code
         if (!codeGekraakt)
         {
-            Console.WriteLine("Je hebt al je pogingen gebruikt. De combinatie was:");
-            Console.WriteLine(string.Join(" ", geheimeCombinatie));
+            MessageBox.Show("Je hebt al je pogingen gebruikt. De combinatie was:");
+            MessageBox.Show(string.Join(" ", geheimeCombinatie));
         }
     }
 
@@ -459,14 +458,14 @@ static int[] BerekenScore (string[] ingevoerdeCombinatie, string[] geheimeCombin
 
         for (int i = 0; i < ingevoerdeCombinatie.Length; i++)
         {
-            if (score[i] != 0) 
+            if (score[i] != 0)
             {
                 for (int j = 0; j < geheimeCombinatie.Length; j++)
                 {
                     if (!gebruiktePosities[j] && ingevoerdeCombinatie[i] == geheimeCombinatie[j])
                     {
                         score[i] = 1;
-                        gebruiktePosities[j] = true; 
+                        gebruiktePosities[j] = true;
                         break;
                     }
                 }
@@ -482,5 +481,43 @@ static int[] BerekenScore (string[] ingevoerdeCombinatie, string[] geheimeCombin
         return score;
 
         string[] highscores = { "naam speler, X pogingen, score/100" };
+
+        private void StartGame()
+        {
+            // Maak een nieuwe lijst voor de namen van de spelers
+            List<string> spelers = new List<string>();
+
+            bool nogEenSpeler = true;
+            while (nogEenSpeler)
+            {
+                // Vraag om de naam van de speler
+                string spelerNaam = Microsoft.VisualBasic.Interaction.InputBox("Voer de naam van de speler in:", "Spelernaam");
+
+                // Voeg de naam toe aan de lijst
+                if (!string.IsNullOrEmpty(spelerNaam))
+                {
+                    spelers.Add(spelerNaam);
+                }
+
+                // Vraag of er nog een speler toegevoegd moet worden
+                string antwoord = Microsoft.VisualBasic.Interaction.InputBox("Wilt u nog een speler toevoegen? (Ja/Nee)", "Nieuwe Speler", "Ja");
+
+                // Als het antwoord "Nee" is, stoppen we met het toevoegen van spelers
+                if (antwoord.Equals("Nee", StringComparison.OrdinalIgnoreCase))
+                {
+                    nogEenSpeler = false;
+                }
+            }
+
+            // Optioneel: geef een melding met de namen van de spelers
+            string spelerNamen = string.Join(", ", spelers);
+            MessageBox.Show($"Spelers: {spelerNamen}", "Spelerslijst");
+        }
+
+        Private void BtnStartGame_Click(object sender, RoutedEventArgs e)
+        {
+            StartGame();
+        }
     }
+
 }

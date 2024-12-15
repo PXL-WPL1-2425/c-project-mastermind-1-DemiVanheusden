@@ -520,4 +520,45 @@ static int[] BerekenScore (string[] ingevoerdeCombinatie, string[] geheimeCombin
         }
     }
 
+    private void KoopHint()
+    {
+        
+        string bericht = $"Je hebt {strafpunten} strafpunten.\n" +
+                         "Kies een hint:\n" +
+                         "1. Juiste kleur (15 strafpunten)\n" +
+                         "2. Juiste kleur op de juiste plaats (25 strafpunten)";
+
+        MessageBoxResult keuze = MessageBox.Show(bericht, "Kies een hint", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+
+
+        if (keuze == MessageBoxResult.Yes)
+        {
+            if (strafpunten >= 15)
+            {
+                strafpunten -= 15;
+                MessageBox.Show("Je hebt 15 strafpunten betaald voor een juiste kleur hint.", "Hint gekocht", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("Je hebt niet genoeg strafpunten om deze hint te kopen.", "Niet genoeg strafpunten", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+        else if (keuze == MessageBoxResult.No)
+        {
+            if (strafpunten >= 25)
+            {
+                strafpunten -= 25;
+                MessageBox.Show("Je hebt 25 strafpunten betaald voor een juiste kleur op de juiste plaats hint.", "Hint gekocht", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("Je hebt niet genoeg strafpunten om deze hint te kopen.", "Niet genoeg strafpunten", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+    }
+
+    private void BtnKoopHint_Click(object sender, RoutedEventArgs e)
+    {
+        KoopHint();
+    }
 }

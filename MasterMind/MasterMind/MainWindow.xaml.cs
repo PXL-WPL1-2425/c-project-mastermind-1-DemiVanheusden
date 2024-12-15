@@ -561,4 +561,42 @@ static int[] BerekenScore (string[] ingevoerdeCombinatie, string[] geheimeCombin
     {
         KoopHint();
     }
+
+    private void BeoordeelGok(string spelerGok, string juisteKleur, string juistePositie)
+
+    {
+        GokTextBox.BorderBrush = Brushes.Transparent;
+        GokTextBox.ToolTip = "Foute kleur";
+
+        if (spelerGok == juisteKleur)
+        {
+            if (spelerGok == juistePositie) // Juiste kleur, juiste positie
+            {
+                GokTextBox.BorderBrush = Brushes.Red;
+                GokTextBox.ToolTip = "Juiste kleur, juiste positie";
+            }
+            else // Juiste kleur, foute positie
+            {
+                GokTextBox.BorderBrush = Brushes.White;
+                GokTextBox.ToolTip = "Juiste kleur, foute positie";
+            }
+        }
+        // Als het geen juiste kleur is, geef geen randkleur
+        else
+        {
+            GokTextBox.BorderBrush = Brushes.Transparent;
+            GokTextBox.ToolTip = "Foute kleur";
+        }
+    }
+
+   
+    private void BtnBeoordeelGok_Click(object sender, RoutedEventArgs e)
+    {
+
+        string spelerGok = GokTextBox.Text; 
+        string juisteKleur = "Rood"; 
+        string juistePositie = "Rood"; 
+
+        BeoordeelGok(spelerGok, juisteKleur, juistePositie);
+    }
 }

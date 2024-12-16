@@ -16,37 +16,37 @@
         <MenuItem Header="Spel" ></MenuItem>
         <MenuItem Name="highScore" Header="Highscore" Click="HighScore_Click"/>
         <MenuItem Name="hint" Header="Hint" Click="hint_Click"/>
-        <MenuItem Name="overzichtHints" Header="Overzicht hints" Click="overzichtHints_Click"/>
+        <MenuItem Name="overzichtHints" Header="Overzicht hints" Click="overzichtHints_Click" Background="White"/>
 
-        <Button Name="checkcode" Content="Check code" HorizontalAlignment="Center" Margin="0,323,0,0" VerticalAlignment="Top"  Width="142" Click="checkcode_Click"/>
+        <Button Name="checkcode" Content="Check code" HorizontalAlignment="Center" Margin="0,323,0,0" VerticalAlignment="Top"  Width="142" Click="checkcode_Click" Background="#FFD0CED1"/>
         <TextBox Name="one" HorizontalAlignment="Left" Margin="60,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="117" Background="White"/>
         <TextBox Name="two" HorizontalAlignment="Left" Margin="247,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="117" Background="White"/>
         <TextBox Name="three" HorizontalAlignment="Left" Margin="440,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="117" Background="White"/>
         <TextBox Name="four" HorizontalAlignment="Left" Margin="622,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="117" Background="White"/>
-        <Button Name="rood1" Content="Rood" HorizontalAlignment="Left" Margin="90,151,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-        <Button Name="geel1" Content="Geel" HorizontalAlignment="Left" Margin="90,176,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-        <Button Name="oranje1" Content="Oranje" HorizontalAlignment="Left" Margin="90,202,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-        <Button Name="wit1" Content="Wit" HorizontalAlignment="Left" Margin="90,227,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-        <Button Name="groen1" Content="Groen" HorizontalAlignment="Left" Margin="90,252,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-        <Button Name="blauw1" Content="Blauw" HorizontalAlignment="Left" Margin="90,277,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-        <Button Name="rood2" Content="Rood" HorizontalAlignment="Left" Margin="277,151,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-        <Button Name="geel2" Content="Geel" HorizontalAlignment="Left" Margin="277,176,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-            <Button Name="oranje2" Content="Oranje" HorizontalAlignment="Left" Margin="277,202,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-            <Button Name="wit2" Content="Wit" HorizontalAlignment="Left" Margin="277,227,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-            <Button Name="groen2" Content="Groen" HorizontalAlignment="Left" Margin="277,252,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-            <Button Name="blauw2" Content="Blauw" HorizontalAlignment="Left" Margin="277,277,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-            <Button Name="rood3" Content="Rood" HorizontalAlignment="Left" Margin="470,151,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-            <Button Name="geel3" Content="Geel" HorizontalAlignment="Left" Margin="470,176,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-            <Button Name="oranje3" Content="Oranje" HorizontalAlignment="Left" Margin="470,202,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-            <Button Name="wit3" Content="Wit" HorizontalAlignment="Left" Margin="470,227,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-            <Button Name="groen3" Content="Groen" HorizontalAlignment="Left" Margin="470,252,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-            <Button Name="blauw3" Content="Blauw" HorizontalAlignment="Left" Margin="470,277,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-            <Button Name="rood4" Content="Rood" HorizontalAlignment="Left" Margin="652,151,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-            <Button Name="geel4" Content="Geel" HorizontalAlignment="Left" Margin="652,176,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-            <Button Name="oranje4" Content="Oranje" HorizontalAlignment="Left" Margin="652,202,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-            <Button Name="wit4" Content="Wit" HorizontalAlignment="Left" Margin="652,227,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-            <Button Name="groen4" Content="Groen" HorizontalAlignment="Left" Margin="652,252,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
-            <Button Name="blauw4" Content="Blauw" HorizontalAlignment="Left" Margin="652,277,0,0" VerticalAlignment="Top" Width="60" Click="color_Click"/>
+        <Button Name="rood1" Content="Rood" HorizontalAlignment="Left" Margin="90,151,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FFFD0505"/>
+        <Button Name="geel1" Content="Geel" HorizontalAlignment="Left" Margin="90,176,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FFF9FC03"/>
+        <Button Name="oranje1" Content="Oranje" HorizontalAlignment="Left" Margin="90,202,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FFFC8308"/>
+        <Button Name="wit1" Content="Wit" HorizontalAlignment="Left" Margin="90,227,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FFFAFAF9"/>
+        <Button Name="groen1" Content="Groen" HorizontalAlignment="Left" Margin="90,252,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FF11FC05"/>
+        <Button Name="blauw1" Content="Blauw" HorizontalAlignment="Left" Margin="90,277,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FF07A8F6"/>
+        <Button Name="rood2" Content="Rood" HorizontalAlignment="Left" Margin="277,151,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FFFC0606"/>
+        <Button Name="geel2" Content="Geel" HorizontalAlignment="Left" Margin="277,176,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FFFAFD03"/>
+            <Button Name="oranje2" Content="Oranje" HorizontalAlignment="Left" Margin="277,202,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FFFD8306"/>
+            <Button Name="wit2" Content="Wit" HorizontalAlignment="Left" Margin="277,227,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FFFCFCFA"/>
+            <Button Name="groen2" Content="Groen" HorizontalAlignment="Left" Margin="277,252,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FF13FC08"/>
+            <Button Name="blauw2" Content="Blauw" HorizontalAlignment="Left" Margin="277,277,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FF09ADFC"/>
+            <Button Name="rood3" Content="Rood" HorizontalAlignment="Left" Margin="470,151,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FFFA0505"/>
+            <Button Name="geel3" Content="Geel" HorizontalAlignment="Left" Margin="470,176,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FFF7FA06"/>
+            <Button Name="oranje3" Content="Oranje" HorizontalAlignment="Left" Margin="470,202,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FFFA8206"/>
+            <Button Name="wit3" Content="Wit" HorizontalAlignment="Left" Margin="470,227,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FFFCFCFC"/>
+            <Button Name="groen3" Content="Groen" HorizontalAlignment="Left" Margin="470,252,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FF10F604"/>
+            <Button Name="blauw3" Content="Blauw" HorizontalAlignment="Left" Margin="470,277,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FF06ABFA"/>
+            <Button Name="rood4" Content="Rood" HorizontalAlignment="Left" Margin="652,151,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FFFD0808"/>
+            <Button Name="geel4" Content="Geel" HorizontalAlignment="Left" Margin="652,176,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FFF9FC05"/>
+            <Button Name="oranje4" Content="Oranje" HorizontalAlignment="Left" Margin="652,202,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FFFD8306"/>
+            <Button Name="wit4" Content="Wit" HorizontalAlignment="Left" Margin="652,227,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FFFAFAF7"/>
+            <Button Name="groen4" Content="Groen" HorizontalAlignment="Left" Margin="652,252,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FF14FF08"/>
+            <Button Name="blauw4" Content="Blauw" HorizontalAlignment="Left" Margin="652,277,0,0" VerticalAlignment="Top" Width="60" Click="color_Click" Background="#FF06AAF9"/>
         <TextBox Name="timerCountdown" HorizontalAlignment="Left" Margin="10,406,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
      
     </Grid>

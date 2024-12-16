@@ -8,7 +8,16 @@
         Title="Mastermind" Height="450" Width="800">
     <Grid>
         <Menu Name="MastermindHighscore" Background="#FFB4B2B2" />
-        
+        <MenuItem Header="bestand" ></MenuItem>
+        <MenuItem Name="newGame" Header="Nieuw spel" Click="newGame_Click"/>
+        <MenuItem Name="exitGame" Header="Afsluiten" Click="exitGame_Click"/>
+        <MenuItem Header="Instellingen" ></MenuItem>
+        <MenuItem Name="amountOfTries" Header="Aantal pogingen"/>
+        <MenuItem Header="Spel" ></MenuItem>
+        <MenuItem Name="highScore" Header="Highscore" Click="HighScore_Click"/>
+        <MenuItem Name="hint" Header="Hint" Click="hint_Click"/>
+        <MenuItem Name="overzichtHints" Header="Overzicht hints" Click="overzichtHints_Click"/>
+
         <Button Name="checkcode" Content="Check code" HorizontalAlignment="Center" Margin="0,323,0,0" VerticalAlignment="Top"  Width="142" Click="checkcode_Click"/>
         <TextBox Name="one" HorizontalAlignment="Left" Margin="60,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="117" Background="White"/>
         <TextBox Name="two" HorizontalAlignment="Left" Margin="247,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="117" Background="White"/>

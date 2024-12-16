@@ -215,7 +215,11 @@ namespace MasterMind
             if (herstart == "nee")
             {
                 wilSpelen = false;  // Stop het spel
-            }
+private void hint_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+    }
 }
 
 MessageBox.Show("Bedankt voor het spelen!");

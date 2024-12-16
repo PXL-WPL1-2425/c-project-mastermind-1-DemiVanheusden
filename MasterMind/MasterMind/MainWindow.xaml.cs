@@ -427,6 +427,17 @@ static int[] BerekenScore (string[] ingevoerdeCombinatie, string[] geheimeCombin
             MessageBox.Show("Je hebt al je pogingen gebruikt. De combinatie was:");
             MessageBox.Show(string.Join(" ", geheimeCombinatie));
         }
+
+        if (eindklassement)
+            { 
+            (codeGekraakt(MessageBox.Show($"Code is gekraakt in {pogingen} (oké).")));
+            codeGekraakt = false;
+            }
+        else
+        {
+            (!codeGekraakt(MessageBox.Show($"You failed! De correcte code was {geheimeCombinatie}(oké).")));
+            codeGekraakt = true;
+        }
     }
 
     // Methode om de geheime combinatie te genereren
@@ -486,7 +497,7 @@ static int[] BerekenScore (string[] ingevoerdeCombinatie, string[] geheimeCombin
 
         string[] highscores = { "naam speler, X pogingen, score/100" };
 
-        private void StartGame()
+        StartGame();
         {
             // Maak een nieuwe lijst voor de namen van de spelers
             List<string> spelers = new List<string>();
@@ -561,11 +572,6 @@ static int[] BerekenScore (string[] ingevoerdeCombinatie, string[] geheimeCombin
         }
     }
 
-    private void BtnKoopHint_Click(object sender, RoutedEventArgs e)
-    {
-        KoopHint();
-    }
-
     private void BeoordeelGok(string spelerGok, string juisteKleur, string juistePositie)
 
     {
@@ -604,3 +610,5 @@ static int[] BerekenScore (string[] ingevoerdeCombinatie, string[] geheimeCombin
         BeoordeelGok(spelerGok, juisteKleur, juistePositie);
     }
 }
+
+    
